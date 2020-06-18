@@ -95,7 +95,17 @@ class MLPlay:
             if len(grid) == 0:
                 return ["SPEED"]
             else:
-                
+                if (2 not in grid) :
+
+                    if (13 in grid):
+                        if (12 not in grid):
+                            return ["SPEED", "MOVE_LEFT"]
+                        elif (14 not in grid):
+                            return ["SPEED", "MOVE_RIGHT"]
+                        elif (self.h2>self.h3) and (self.h2>self.h4):
+                            return ["SPEED", "MOVE_LEFT"]
+                        elif (self.h4>self.h3):
+                            return ["SPEED", "MOVE_RIGHT"]
 
                 if (2 not in grid): # Check forward 
                     # Back to lane center
